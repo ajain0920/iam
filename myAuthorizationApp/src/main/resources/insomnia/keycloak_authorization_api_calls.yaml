@@ -1,0 +1,91 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: keycloak Requests
+meta:
+  id: wrk_c665548f505c4fe0a9b8795b6366e42f
+  created: 1768736455320
+  modified: 1769034590431
+  description: written for myAuthorizationApp to test how authorization flow using
+    IdP - KeyCloak.
+collection:
+  - url: http://localhost:8080/realms/my-fedsso-realm/protocol/openid-connect/token
+    name: Get Access Token
+    meta:
+      id: req_53561679c80c42aa98b8be92df047257
+      created: 1768736455344
+      modified: 1769034274349
+      isPrivate: false
+      description: ""
+      sortKey: -1768737925959
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - name: client_id
+          value: my-auth-client-app
+          description: ""
+          disabled: false
+        - name: client_secret
+          value: gdDDaKS71DaEcHdNXVPjWR5V0H3qp99E
+          description: ""
+          disabled: false
+        - name: grant_type
+          value: password
+          description: ""
+          disabled: false
+        - name: username
+          value: demo
+          description: ""
+          disabled: false
+        - name: password
+          value: demo
+          description: ""
+          disabled: false
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8082/admin/approve
+    name: Call Client API
+    meta:
+      id: req_5b9ddd84a2f646498b208cf82407156a
+      created: 1768737925859
+      modified: 1768759481965
+      isPrivate: false
+      description: ""
+      sortKey: -1768737925859
+    method: POST
+    headers:
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJzaG5Xb1hlbHlHcmtZV3YySzRBYmpIY19NcHVsUVdObFZYSDVsRm4xX1pvIn0.eyJleHAiOjE3Njg3NTk1ODIsImlhdCI6MTc2ODc1OTI4MiwianRpIjoib25ydHJvOmNjMDcwM2UyLWVkNjYtY2I2MS0wMzQ0LTM5ZmU4ZmUxNzI5NSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbXktZmVkc3NvLXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM5NTcwN2YxLWQ5ZWEtNGFlMy05NjQ3LTVhMTdmZWYwYjRlMSIsInR5cCI6IkJlYXJlciIsImF6cCI6Im15LWF1dGgtY2xpZW50LWFwcCIsInNpZCI6ImFpbUJzcFV5MjJET3NBb3BtSW5CekJLRyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgyIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJST0xFX1VTRVIiLCJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtbXktZmVkc3NvLXJlYWxtIiwiQURNSU4iLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6ImRlbW8gZGVtbyIsInByZWZlcnJlZF91c2VybmFtZSI6ImRlbW8iLCJnaXZlbl9uYW1lIjoiZGVtbyIsImZhbWlseV9uYW1lIjoiZGVtbyIsImVtYWlsIjoiZGVtb0BlbWFpbC5jb20ifQ.PyZuDgv-x2z92ix-pOdCeyT3R-hew2tXNQPhO5EC7dtIDWN4srtcURcJzjU997v6hLPgaSfCSs2D4Dd5SP7MUVqsZC0QbaSwKlEV_W9jt_i_gsRdHCZQ74yj3G7ydcTu2e8Gu8Jihz-xvEivsZFBLSNAqIDZYqtHcL2gcgyej9m-mc_KFoUYFesETN95wUf6JAwvN4o78MSPELcV3uV2jhpm2B-bF9NoHRcrc9Hyypapd-TTT9Jj4AHn4plQDOeFAJZv51hfwS8E6pp5XatNZ49eKqEQCtcBraldYcy7jxV5RBMq-x0uk_dy4meo6UCAGHZErO1C4cmyyoFHmPPMdA
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_cc63a0f543abe2ab5f236eb5b0278433f20ea93e
+    created: 1768736455336
+    modified: 1768736455336
+environments:
+  name: Base Environment
+  meta:
+    id: env_cc63a0f543abe2ab5f236eb5b0278433f20ea93e
+    created: 1768736455331
+    modified: 1768736455331
+    isPrivate: false
