@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: my-fedsso-client-app
+            #client-secret: kAHC8Pj6CqqFfc6I1fhjJ3ijmTOoRK5n
+            scope: openid,profile,email
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/my-fedsso-realm
